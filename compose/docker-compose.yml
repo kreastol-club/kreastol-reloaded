@@ -1,0 +1,10 @@
+version: "3.8"
+
+name: kreastol-reloaded
+
+services:
+  app:
+    image: kreastol-reloaded:1.0
+    ports:
+     - "80:80"
+
