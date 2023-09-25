@@ -4,7 +4,7 @@ name: kreastol-reloaded
 
 services:
   app:
-    image: kreastol-reloaded:1.1
+    image: kreastol-reloaded:1.2
     ports:
-     - "8888:80"
+     - "8888:3000"
 
