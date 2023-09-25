@@ -1,12 +1,23 @@
 import React from "react";
-
+import { useTranslation } from "react-i18next";
 const MainPage = () => {
+  let { t, i18n } = useTranslation();
+  let changeLanguageHandler = (e) => {
+    const languageValue = e.target.value
+    i18n.changeLanguage(languageValue);
+  }
   return (
     <div>
-      <h3>Welcome to the Kreastol main page</h3>
-      <small>The site is under developement</small>
+      <select className="custom-select" style={{width: 200}} onChange={changeLanguageHandler}>
+        <option value="en" >{t('english')}</option>
+        <option value="hu" >{t('hungarian')}</option>
+      </select>
+      <br />
+      <br />
+      <h3>{t('welcome')}</h3>
+      <small>{t('under-developement')}</small>
 
-      <p>Check back in a few day!</p>
+      <p>{t('check-back')}</p>
     </div>
   );
 };
