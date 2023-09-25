@@ -1,3 +1,6 @@
 dev-env/
 node_modules/
 compose/
+**/node_modules
+**/npm-debug.log
+build

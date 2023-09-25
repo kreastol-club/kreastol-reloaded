@@ -1,15 +1,13 @@
-#Stage 1
-FROM node:18-alpine as builder
+FROM node:18-alpine AS development
+ENV NODE_ENV development
+# Add a work directory
 WORKDIR /app
-COPY package*.json .
-COPY yarn*.lock .
-RUN yarn install
+# Cache and Install dependencies
+COPY package.json .
+RUN npm install
+# Copy app files
 COPY . .
-RUN yarn build
-
-#Stage 2
-FROM nginx:1.19.0
-WORKDIR /usr/share/nginx/html
-RUN rm -rf ./*
-COPY --from=builder /app/build .
-ENTRYPOINT ["nginx", "-g", "daemon off;"]
+# Expose port
+EXPOSE 3000
+# Start the app
+CMD [ "npm", "start" ]
