@@ -4,5 +4,9 @@
     "hungarian": "Hungarian",
     "welcome": "Welcome to the Kreastol main page",
     "under-developement": "The site is under developement!",
-    "check-back": "Check back in a few days!"
+    "check-back": "Check back in a few days!",
+    "password": "Password",
+    "email": "Email",
+    "reset-form": "Reset Form",
+    "submit": "Submit"
   }

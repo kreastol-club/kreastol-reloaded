@@ -4,5 +4,9 @@
     "hungarian": "Magyar",
     "welcome": "Üdvözöllek a Kreastol Klub fő oldalán",
     "under-developement": "Ez az oldal még fejlesztés alatt áll!",
-    "check-back": "Látogass vissza néhány nap múlva!"
+    "check-back": "Látogass vissza néhány nap múlva!",
+    "password": "Jelszó",
+    "email": "Email",
+    "reset-form": "Újrakezdés",
+    "submit": "Kész"
   }

@@ -1,4 +1,15 @@
+import {useTranslation} from "react-i18next";
+import {useEffect} from "react";
+import {useCookies} from "react-cookie";
+
 export default function Login() {
+    const [cookies, setCookie] = useCookies(["lang"]);
+    let {t, i18n} = useTranslation();
+
+    useEffect(() => {
+        i18n.changeLanguage(cookies["lang"]);
+    }, [cookies, i18n]);
+
     async function handleSubmit(e) {
         e.preventDefault();
 
@@ -15,11 +26,11 @@ export default function Login() {
                 Email: <input name="email"/>
             </label>
             <label>
-                Password: <input name="password" />
+                {t('password')} <input name="password" />
             </label>
             <hr />
-            <button type="reset">Reset form</button>
-            <button type="submit">Submit form</button>
+            <button type="reset">{t('reset-form')}</button>
+            <button type="submit">{t('submit')}</button>
         </form>
     );
 }

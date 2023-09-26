@@ -1,11 +1,22 @@
-import React from "react";
+import React, {useEffect} from "react";
 import {useTranslation} from "react-i18next";
+import {useCookies} from "react-cookie";
 
 const MainPage = () => {
     let {t, i18n} = useTranslation();
-    let changeLanguageHandler = async (e) => {
-        const languageValue = e.target.value
-        await i18n.changeLanguage(languageValue);
+    const [cookies, setCookie] = useCookies(["lang"]);
+
+    useEffect(() => {
+        if(!cookies["lang"]){
+            setCookie('lang', 'en');
+        }
+        i18n.changeLanguage(cookies["lang"]);
+    }, [cookies, i18n, setCookie]);
+
+    let changeLanguageHandler = (e) => {
+        const languageValue = e.target.value;
+        i18n.changeLanguage(languageValue);
+        setCookie("lang", languageValue);
     }
 
     return (
