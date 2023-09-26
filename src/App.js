@@ -1,17 +1,10 @@
-import React, { Component } from "react";
-import {
-    BrowserRouter,
-    Route,
-    Switch,
-    Link,
-    Redirect,
-    Routes
-} from "react-router-dom";
+import React, {Component} from "react";
+import {Route, Routes} from "react-router-dom";
 
 import './css/App.css';
 import MainPage from "./pages";
 import Game from "./pages/tictactoe";
-
+import Login from "./pages/login";
 
 
 class App extends Component {
@@ -19,8 +12,10 @@ class App extends Component {
         return (
             <>
                 <Routes>
-                    <Route path="/" element={<MainPage />} />
-                    <Route path="/game" element={<Game />} />
+                    <Route path="/" element={<MainPage/>}/>
+                    <Route path="/game" element={<Game/>}/>
+                    <Route path="/login" element={<Login/>}/>
+
                 </Routes>
             </>
         );
