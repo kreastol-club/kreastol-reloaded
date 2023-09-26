@@ -16,7 +16,8 @@ export default function MainNavigator() {
         <>
             <div className='navbar'>
                 <Login />
-                <Link to='\games' content={t('games')} />
+                <br />
+                <Link to='/'>{t('home')}</Link> | <Link to='/game'>{t('games')}</Link>
             </div>
         </>
 

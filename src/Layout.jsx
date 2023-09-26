@@ -3,7 +3,7 @@ import {useTranslation} from "react-i18next";
 import {useEffect} from "react";
 import MainNavigator from "./MainNavigator";
 
-export default function Layout() {
+export default function Layout(props) {
     const [cookies, setCookie] = useCookies(["lang"]);
     let {t, i18n} = useTranslation();
 
@@ -13,8 +13,10 @@ export default function Layout() {
 
     return (
         <div>
-            <MainNavigator />
+            <MainNavigator/>
+            <hr/>
             <main>
+                {props.children}
             </main>
         </div>
     );

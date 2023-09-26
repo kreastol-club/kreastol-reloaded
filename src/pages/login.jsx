@@ -28,7 +28,6 @@ export default function Login() {
             <label>
                 {t('password')} <input name="password" />
             </label>
-            <hr />
             <button type="reset">{t('reset-form')}</button>
             <button type="submit">{t('submit')}</button>
         </form>
