@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Onest:wght@200;400;900&display=swap');
+
+.material-symbols-outlined {
+    font-variation-settings: 'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24
+}
+
+:root {
+
+    --dark-background: #2D2D2D;
+
+    --light-background: #f2e3bc;
+    --primary: #57467b;
+}
+
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--light-background);
+    font-family: Onest, sans-serif;
+    margin: 20px;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5 {
+    margin-top: 0;
+    font-weight: 900;
+
+}
+
+h1 {
+    font-size: 22px;
+}
+
+h2 {
+    font-size: 20px;
+}
+
+h3 {
+    font-size: 18px;
+}
+
+h4 {
+    font-size: 16px;
+}
+
+h5 {
+    font-size: 14px;
+}
+
+h6 {
+    font-size: 12px;
+}
+
+small, p {
+    font-size: 1em;
+}
+
+p {
+    font-weight: 400;
+}
+
+small {
+    font-weight: 200;
+}
+
+code {
+    font-size: 1.2em;
+}
+
+ul {
+    padding-inline-start: 20px;
+}

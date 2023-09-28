@@ -1,9 +1,10 @@
 import {useTranslation} from "react-i18next";
-import {useEffect} from "react";
+import {useEffect, useState} from "react";
 import {useCookies} from "react-cookie";
 
 export default function Login() {
     const [cookies, setCookie] = useCookies(["lang"]);
+    const [isOpen, setIsOpen] = useState(false);
     let {t, i18n} = useTranslation();
 
     useEffect(() => {
@@ -20,16 +21,25 @@ export default function Login() {
         console.log(formJson);
     }
 
+    function openLoginHandler() {
+        setIsOpen(!isOpen);
+    }
+
     return (
-        <form method="post" onSubmit={handleSubmit}>
-            <label>
-                Email: <input name="email"/>
-            </label>
-            <label>
-                {t('password')} <input name="password" />
-            </label>
-            <button type="reset">{t('reset-form')}</button>
-            <button type="submit">{t('submit')}</button>
-        </form>
+        <div className={`login-container ${isOpen ? 'active' : ''}`}>
+            <div className={'login-open'} onClick={openLoginHandler}>
+                <span className={'material-symbols-outlined'}>lock</span>
+            </div>
+            <form method="post" onSubmit={handleSubmit}>
+                <label>
+                    Email: <input name="email"/>
+                </label>
+                <label>
+                    {t('password')} <input name="password" />
+                </label>
+                <button type="reset">{t('reset-form')}</button>
+                <button type="submit">{t('submit')}</button>
+            </form>
+        </div>
     );
 }

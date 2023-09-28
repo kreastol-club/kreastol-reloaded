@@ -2,6 +2,7 @@ import {useCookies} from "react-cookie";
 import {useTranslation} from "react-i18next";
 import {useEffect} from "react";
 import MainNavigator from "./MainNavigator";
+import Login from "./pages/login";
 
 export default function Layout(props) {
     const [cookies, setCookie] = useCookies(["lang"]);
@@ -18,6 +19,7 @@ export default function Layout(props) {
             <main>
                 {props.children}
             </main>
+            <Login />
         </div>
     );
 }
