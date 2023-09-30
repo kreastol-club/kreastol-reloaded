@@ -10,9 +10,10 @@
 :root {
 
     --dark-background: #2D2D2D;
+    --light-background: #f7ebe8;
 
-    --light-background: #f2e3bc;
     --primary: #57467b;
+    --text: #1e1e24;
 }
 
 
@@ -26,12 +27,17 @@ body {
     margin: 20px;
     padding: 0;
     overflow-x: hidden;
+    color: var(--text);
+}
+
+a {
+    color: var(--text);
 }
 
 h1, h2, h3, h4, h5 {
     margin-top: 0;
     font-weight: 900;
-
+    color: var(--text);
 }
 
 h1 {
